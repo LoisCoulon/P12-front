@@ -1,5 +1,6 @@
 @import "./styles/mixins";
 @import "./styles/variables";
 @import "./styles/base";
-// @import "./components/";
-// @import "./pages/Dashboard";
+@import "./components/navbar/navbar";
+@import "./components/sidebar/sidebar";
+@import "./pages/dashboard/dashboard";

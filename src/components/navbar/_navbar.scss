@@ -1,0 +1,16 @@
+header {
+  height: 100px;
+  background-color: $black;
+  box-shadow: 0px 4px 4px 0px #00000040;
+
+  .logo {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      height: 60px;
+    }
+  }
+}

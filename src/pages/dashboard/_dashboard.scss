@@ -1,0 +1,22 @@
+body {
+  background-color: $background;
+
+  .main {
+    margin: 60px 60px 60px 160px;
+
+    .user {
+      .username {
+        color: $primary;
+      }
+      h1 {
+        font-size: 48px;
+        font-weight: 500;
+      }
+      p {
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: 400;
+      }
+    }
+  }
+}
