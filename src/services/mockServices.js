@@ -3,3 +3,9 @@ export function getList() {
 
   return fetch(baseUrl).then((data) => data.json());
 }
+
+export function getActivity() {
+  const baseUrl = "../mocked/activity.json";
+
+  return fetch(baseUrl).then((data) => data.json());
+}

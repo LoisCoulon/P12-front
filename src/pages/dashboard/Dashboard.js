@@ -30,15 +30,17 @@ function Dashboard() {
       </section>
       <section className="main">
         <Hello username={data.userInfos.firstName}></Hello>
-        <div className="graphs">
-          <Activity></Activity>
+        <div className="content">
+          <div className="graphs">
+            <Activity></Activity>
+          </div>
+          <Info
+            cal={data.keyData.calorieCount}
+            prot={data.keyData.proteinCount}
+            glu={data.keyData.carbohydrateCount}
+            lip={data.keyData.lipidCount}
+          ></Info>
         </div>
-        <Info
-          cal={data.keyData.calorieCount}
-          prot={data.keyData.proteinCount}
-          glu={data.keyData.carbohydrateCount}
-          lip={data.keyData.lipidCount}
-        ></Info>
       </section>
     </div>
   ) : (

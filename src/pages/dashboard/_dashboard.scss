@@ -5,6 +5,7 @@ body {
     margin: 60px 60px 60px 160px;
 
     .user {
+      margin-bottom: 60px;
       .username {
         color: $primary;
       }
@@ -18,8 +19,12 @@ body {
         font-weight: 400;
       }
     }
-    .graphs {
-      width: 60%;
+    .content {
+      display: flex;
+      justify-content: space-between;
+      .graphs {
+        width: 60%;
+      }
     }
   }
 }
