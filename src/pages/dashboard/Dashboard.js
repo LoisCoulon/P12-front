@@ -4,6 +4,8 @@ import Navbar from "../../components/navbar/Navbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import { getList } from "../../services/mockServices";
 import Hello from "../../components/hello/Hello";
+import Info from "../../components/info/Info";
+import Activity from "../../components/activity/Activity";
 
 function Dashboard() {
   const { id } = useParams();
@@ -28,6 +30,15 @@ function Dashboard() {
       </section>
       <section className="main">
         <Hello username={data.userInfos.firstName}></Hello>
+        <div className="graphs">
+          <Activity></Activity>
+        </div>
+        <Info
+          cal={data.keyData.calorieCount}
+          prot={data.keyData.proteinCount}
+          glu={data.keyData.carbohydrateCount}
+          lip={data.keyData.lipidCount}
+        ></Info>
       </section>
     </div>
   ) : (
