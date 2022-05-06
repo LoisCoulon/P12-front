@@ -1,4 +1,5 @@
-{
+[
+  {
     "userId": 12,
     "sessions": [
       {
@@ -63,4 +64,5 @@
         "sessionLength": 50
       }
     ]
-  },
+  }
+]

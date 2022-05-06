@@ -3,7 +3,6 @@ import ovalRed from "../../assets/Oval_red.png";
 import {
   BarChart,
   Bar,
-  Cell,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -25,7 +24,6 @@ function Activity() {
       if (mounted) {
         let datas = items.find((item) => item.userId === parseFloat(id));
         setActivityData(datas);
-        console.log(datas);
       }
     });
     return () => (mounted = false);
@@ -55,22 +53,22 @@ function Activity() {
       <div className="activity--graph">
         <ResponsiveContainer width="100%" aspect={4}>
           <BarChart
-            width={500}
+            width="100%"
             height={300}
             data={data}
             margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5,
+              top: 20,
+              right: 10,
+              left: 10,
+              bottom: 10,
             }}
           >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="date" />
             <YAxis orientation="right" domain={[0, "dataMax"]} />
             <Tooltip />
-            <Bar dataKey="kg" fill="#282D30" />
-            <Bar dataKey="cal" fill="#E60000" />
+            <Bar radius={5} barSize={10} dataKey="kg" fill="#282D30" />
+            <Bar radius={5} barSize={10} dataKey="cal" fill="#E60000" />
           </BarChart>
         </ResponsiveContainer>
       </div>

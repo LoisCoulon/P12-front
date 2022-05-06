@@ -1,4 +1,7 @@
 .activity {
+  background-color: $background2;
+  border-radius: 5px;
+  padding: 5px;
   &--top {
     margin-top: 20px;
     display: flex;
@@ -20,5 +23,8 @@
         margin-left: 10px;
       }
     }
+  }
+  &--graph {
+    width: 100%;
   }
 }

@@ -6,6 +6,7 @@ import { getList } from "../../services/mockServices";
 import Hello from "../../components/hello/Hello";
 import Info from "../../components/info/Info";
 import Activity from "../../components/activity/Activity";
+import Duration from "../../components/duration/Duration";
 
 function Dashboard() {
   const { id } = useParams();
@@ -33,6 +34,7 @@ function Dashboard() {
         <div className="content">
           <div className="graphs">
             <Activity></Activity>
+            <Duration></Duration>
           </div>
           <Info
             cal={data.keyData.calorieCount}
@@ -44,7 +46,20 @@ function Dashboard() {
       </section>
     </div>
   ) : (
-    <h1 className="loader">Chargement en cours ... </h1>
+    <div className="container">
+      <div className="loading">
+        <div className="loading__letter">L</div>
+        <div className="loading__letter">o</div>
+        <div className="loading__letter">a</div>
+        <div className="loading__letter">d</div>
+        <div className="loading__letter">i</div>
+        <div className="loading__letter">n</div>
+        <div className="loading__letter">g</div>
+        <div className="loading__letter">.</div>
+        <div className="loading__letter">.</div>
+        <div className="loading__letter">.</div>
+      </div>
+    </div>
   );
 }
 export default Dashboard;

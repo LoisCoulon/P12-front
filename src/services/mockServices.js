@@ -9,3 +9,9 @@ export function getActivity() {
 
   return fetch(baseUrl).then((data) => data.json());
 }
+
+export function getDuration() {
+  const baseUrl = "../mocked/averageSession.json";
+
+  return fetch(baseUrl).then((data) => data.json());
+}

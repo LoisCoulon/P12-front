@@ -1,9 +1,10 @@
-@import "./styles/mixins";
 @import "./styles/variables";
+@import "./styles/mixins";
 @import "./styles/base";
 @import "./components/navbar/navbar";
 @import "./components/sidebar/sidebar";
 @import "./components/info/info";
 @import "./components/activity/activity";
+@import "./components/duration/duration";
 @import "./pages/dashboard/dashboard";
 @import "./pages/home/home";

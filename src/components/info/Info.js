@@ -7,7 +7,7 @@ function Info({ cal, prot, glu, lip }) {
   return (
     <div className="infos">
       <div className="infos--items">
-        <div className="items--img">
+        <div className="items--img red">
           <img src={energy} alt="flamme" />
         </div>
         <div className="item">
@@ -16,7 +16,7 @@ function Info({ cal, prot, glu, lip }) {
         </div>
       </div>
       <div className="infos--items">
-        <div className="items--img">
+        <div className="items--img blue">
           <img src={chicken} alt="poulet" />
         </div>
         <div className="item">
@@ -25,7 +25,7 @@ function Info({ cal, prot, glu, lip }) {
         </div>
       </div>
       <div className="infos--items">
-        <div className="items--img">
+        <div className="items--img yellow">
           <img src={apple} alt="pomme" />
         </div>
         <div className="item">
@@ -34,7 +34,7 @@ function Info({ cal, prot, glu, lip }) {
         </div>
       </div>
       <div className="infos--items">
-        <div className="items--img">
+        <div className="items--img rose">
           <img src={cheeseburger} alt="cheeseburger" />
         </div>
         <div className="item">
