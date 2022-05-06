@@ -57,7 +57,7 @@ function Duration() {
   };
 
   return (
-    <ResponsiveContainer height={250} width="30%" className="duration">
+    <ResponsiveContainer height={250} width="31%" className="duration">
       <LineChart
         data={data}
         height="60%"

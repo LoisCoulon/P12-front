@@ -15,3 +15,9 @@ export function getDuration() {
 
   return fetch(baseUrl).then((data) => data.json());
 }
+
+export function getRadar() {
+  const baseUrl = "../mocked/performance.json";
+
+  return fetch(baseUrl).then((data) => data.json());
+}

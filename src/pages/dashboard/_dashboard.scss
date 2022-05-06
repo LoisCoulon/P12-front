@@ -23,9 +23,10 @@ body {
       display: flex;
       justify-content: space-between;
       .graphs {
-        width: 70%;
+        width: 75%;
 
         &--bottom {
+          margin-top: 20px;
           display: flex;
           justify-content: space-between;
         }
