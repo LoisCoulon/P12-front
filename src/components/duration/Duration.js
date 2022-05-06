@@ -41,7 +41,7 @@ function Duration() {
     return week[+num - 1];
   }
 
-  const CustomTooltip = ({ active, payload, label }) => {
+  const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
         <div

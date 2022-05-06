@@ -7,6 +7,8 @@ import Hello from "../../components/hello/Hello";
 import Info from "../../components/info/Info";
 import Activity from "../../components/activity/Activity";
 import Duration from "../../components/duration/Duration";
+import RadarComponent from "../../components/radar/RadarComponent";
+import Score from "../../components/score/Score";
 
 function Dashboard() {
   const { id } = useParams();
@@ -34,7 +36,11 @@ function Dashboard() {
         <div className="content">
           <div className="graphs">
             <Activity></Activity>
-            <Duration></Duration>
+            <div className="graphs--bottom">
+              <Duration></Duration>
+              <RadarComponent></RadarComponent>
+              <Score></Score>
+            </div>
           </div>
           <Info
             cal={data.keyData.calorieCount}
