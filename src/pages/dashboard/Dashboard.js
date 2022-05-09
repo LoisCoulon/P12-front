@@ -15,31 +15,27 @@ function Dashboard() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    let mounted = true;
     getList().then((items) => {
-      if (mounted) {
-        let datas = items.find((item) => item.id === parseFloat(id));
-        setData(datas);
-      }
+      let datas = items.find((item) => item.id === parseFloat(id));
+      setData(datas);
     });
-    return () => (mounted = false);
   }, [id]);
 
   return data ? (
     <div className="wrapper">
       <section className="navigation">
-        <Navbar></Navbar>
-        <Sidebar></Sidebar>
+        <Navbar />
+        <Sidebar />
       </section>
       <section className="main">
-        <Hello username={data.userInfos.firstName}></Hello>
+        <Hello username={data.userInfos.firstName} />
         <div className="content">
           <div className="graphs">
-            <Activity></Activity>
+            <Activity />
             <div className="graphs--bottom">
-              <Duration></Duration>
-              <RadarComponent></RadarComponent>
-              <Score></Score>
+              <Duration />
+              <RadarComponent />
+              <Score />
             </div>
           </div>
           <Info
@@ -47,7 +43,7 @@ function Dashboard() {
             prot={data.keyData.proteinCount}
             glu={data.keyData.carbohydrateCount}
             lip={data.keyData.lipidCount}
-          ></Info>
+          />
         </div>
       </section>
     </div>

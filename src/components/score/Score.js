@@ -6,16 +6,29 @@ import {
   Tooltip,
 } from "recharts";
 
-const data = [
-  {
-    name: "Score",
-    uv: 31.47,
-    pv: 2400,
-    fill: "#FF0000",
-  },
-];
-
 function Score() {
+  const data = [
+    {
+      name: "Score",
+      uv: 38.5,
+      pv: 2400,
+      fill: "#FF0000",
+    },
+  ];
+
+  const score = data.map((d) => d.uv);
+
+  /**
+   * This function calculates the end angle of the radial bar.
+   * @param {number} score Score of the user.
+   * @returns the end angle
+   */
+  function calculateAngle(score) {
+    const angle = 180 - 3.6 * score;
+
+    return angle;
+  }
+
   return (
     <ResponsiveContainer className="score" height={250} width="31%">
       <RadialBarChart
@@ -25,16 +38,16 @@ function Score() {
         outerRadius="80%"
         data={data}
         startAngle={180}
-        endAngle={0}
+        endAngle={calculateAngle(score)}
       >
         <text
           dy="50%"
           dx="50%"
           textAnchor="middle"
-          fill="grey"
+          fill="black"
           style={{ fontSize: "2.2vw" }}
         >
-          31%
+          {score}%
         </text>
         <text dy="60%" dx="50%" textAnchor="middle" fill="grey">
           de votre
@@ -42,13 +55,7 @@ function Score() {
         <text dy="70%" dx="50%" textAnchor="middle" fill="grey">
           objectif
         </text>
-        <RadialBar
-          minAngle={15}
-          // label={{ fill: "#666", position: "insideStart" }}
-          background
-          clockWise={true}
-          dataKey="uv"
-        />
+        <RadialBar minAngle={15} background clockWise={true} dataKey="uv" />
         <Legend
           verticalAlign="top"
           align="left"

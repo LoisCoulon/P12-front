@@ -14,29 +14,27 @@ import { getActivity } from "../../services/mockServices";
 import { useParams } from "react-router-dom";
 
 function Activity() {
-  const [activityData, setActivityData] = useState(null);
+  const [activityData, setActivityData] = useState([]);
   const { id } = useParams();
-  let data = [];
 
   useEffect(() => {
-    let mounted = true;
     getActivity().then((items) => {
-      if (mounted) {
-        let datas = items.find((item) => item.userId === parseFloat(id));
-        setActivityData(datas);
+      let datas = items.find((item) => item.userId === parseFloat(id));
+      if (datas) {
+        const formattedData = datas.sessions.map((activity) => ({
+          date: activity.day,
+          kg: activity.kilogram,
+          cal: activity.calories,
+        }));
+
+        setActivityData(formattedData);
       }
     });
-    return () => (mounted = false);
   }, [id]);
 
-  if (activityData) {
-    activityData.sessions.map((activity) =>
-      data.push({
-        date: activity.day,
-        kg: activity.kilogram,
-        cal: activity.calories,
-      })
-    );
+  function weekDays(num) {
+    const week = [1, 2, 3, 4, 5, 6, 7];
+    return week[num];
   }
 
   return (
@@ -55,7 +53,7 @@ function Activity() {
           <BarChart
             width="100%"
             height={300}
-            data={data}
+            data={activityData}
             margin={{
               top: 20,
               right: 10,
@@ -64,7 +62,7 @@ function Activity() {
             }}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="date" />
+            <XAxis tickFormatter={weekDays} />
             <YAxis orientation="right" domain={[0, "dataMax"]} />
             <Tooltip />
             <Bar radius={5} barSize={10} dataKey="kg" fill="#282D30" />

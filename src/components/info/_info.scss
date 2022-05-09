@@ -43,12 +43,23 @@
     }
     .item {
       p {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 700;
       }
       span {
         font-size: 14px;
         font-weight: 500;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1250px) {
+  .infos {
+    &--items {
+      .items--img {
+        width: auto;
+      }
+      .item {
       }
     }
   }

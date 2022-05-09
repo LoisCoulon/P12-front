@@ -12,29 +12,21 @@ import {
 import { useParams } from "react-router-dom";
 
 function Duration() {
-  const [durationData, setDurationData] = useState(null);
+  const [durationData, setDurationData] = useState([]);
   const { id } = useParams();
-  let data = [];
 
   useEffect(() => {
-    let mounted = true;
     getDuration().then((items) => {
-      if (mounted) {
-        let datas = items.find((item) => item.userId === parseFloat(id));
-        setDurationData(datas);
+      let datas = items.find((item) => item.userId === parseFloat(id));
+      if (datas) {
+        const formattedData = datas.sessions.map((activity) => ({
+          jour: activity.day,
+          durée: activity.sessionLength,
+        }));
+        setDurationData(formattedData);
       }
     });
-    return () => (mounted = false);
   }, [id]);
-
-  if (durationData) {
-    durationData.sessions.map((activity) =>
-      data.push({
-        jour: activity.day,
-        durée: activity.sessionLength,
-      })
-    );
-  }
 
   function weekDays(num) {
     const week = ["L", "M", "M", "J", "V", "S", "D"];
@@ -59,7 +51,7 @@ function Duration() {
   return (
     <ResponsiveContainer height={250} width="31%" className="duration">
       <LineChart
-        data={data}
+        data={durationData}
         height="60%"
         width="100%"
         margin={{
