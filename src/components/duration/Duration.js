@@ -1,4 +1,5 @@
 import { getDuration } from "../../services/mockServices";
+import { getApiDuration } from "../../services/services";
 import { useEffect, useState } from "react";
 import {
   LineChart,
@@ -10,20 +11,19 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { useParams } from "react-router-dom";
-import { getApiDuration } from "../../services/services";
 
 function Duration() {
   const [durationData, setDurationData] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
-    //Using Mocked datas
+    /** Using Mocked datas*/
     // getDuration().then((items) => {
     //   let datas = items.find((item) => item.userId === parseFloat(id));
 
     // });
 
-    //Using API datas
+    /**Using API datas*/
     getApiDuration(id).then((datas) => {
       if (datas.data) {
         const formattedData = datas.data.sessions.map((activity) => ({

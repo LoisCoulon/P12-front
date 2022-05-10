@@ -1,3 +1,5 @@
+import { getActivity } from "../../services/mockServices";
+import { getApiActivity } from "../../services/services";
 import oval from "../../assets/Oval.png";
 import ovalRed from "../../assets/Oval_red.png";
 import {
@@ -10,22 +12,20 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { useEffect, useState } from "react";
-import { getActivity } from "../../services/mockServices";
 import { useParams } from "react-router-dom";
-import { getApiActivity } from "../../services/services";
 
 function Activity() {
   const [activityData, setActivityData] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
-    //Using Mocked datas
+    /** Using Mocked datas*/
 
     // getActivity().then((items) => {
     //   let datas = items.find((item) => item.userId === parseFloat(id));
     // });
 
-    //Using Api datas
+    /**Using API datas*/
 
     getApiActivity(id).then((datas) => {
       if (datas.data) {

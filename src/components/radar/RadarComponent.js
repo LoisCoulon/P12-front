@@ -1,3 +1,5 @@
+import { getRadar } from "../../services/mockServices";
+import { getApiRadar } from "../../services/services";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {
@@ -8,22 +10,19 @@ import {
   RadarChart,
   ResponsiveContainer,
 } from "recharts";
-import { getRadar } from "../../services/mockServices";
-import { getApiRadar } from "../../services/services";
 
 function RadarComponent() {
   const [radarData, setRadarData] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
-    //Using Mocked datas
-
+    /** Using Mocked datas*/
     // getRadar().then((items) => {
     //   let datas = items.find((item) => item.userId === parseFloat(id));
 
     // });
 
-    //Using API datas
+    /**Using API datas*/
     getApiRadar(id).then((items) => {
       if (items.data) {
         const formattedData = items.data.data.map((rd) => ({
