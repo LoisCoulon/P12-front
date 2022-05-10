@@ -2,6 +2,38 @@
 [![forthebadge](./src/assets/uses-scss.svg)](https://sass-lang.com/documentation/syntax)
 [![forthebadge](./src/assets/and-recharts.svg)](https://recharts.org/)
 
+# SportSee (P12 : Développez un tableau de bord d'analytics avec React)
+(./src/assets/logo.png)
+
+## Presentation
+SportSee is a startup dedicated to sports coaching. 
+Here is a new version of the dashboard page. This brand new page will allow the user to follow the number of sessions carried out as well as the number of burned calories.
+
+## Technologies
+- React intalled with create-react-app
+- Javascript
+- SCSS
+- Recharts library
+
+## How to launch the project locally
+Copy the repository : git clone https://github.com/LoisCoulon/P12-front.git
+Install the dependencies : yarn install / npm install
+run the app : yarn start / npm start
+
+##Using the Api
+- Prerequisites : 
+NodeJS (version 12.18)
+Yarn
+- Fork this repository : https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard.git
+- Clone it on your computer.
+- The yarn command will allow you to install the dependencies.
+- The yarn dev command will allow you to run the micro API.
+
+##Using the mocked datas
+Get to the following files : Dashboard.js, Activity.js, Duration.js, RadarComponent.js
+Uncomment the function under this comment /** Using Mocked datas*/ and comment the function under /**Using API datas*/
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
