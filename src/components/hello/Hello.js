@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function Hello({ username }) {
   return (
     <div className="user">
@@ -10,3 +12,7 @@ function Hello({ username }) {
   );
 }
 export default Hello;
+
+Hello.propTypes = {
+  username: PropTypes.string.isRequired,
+};

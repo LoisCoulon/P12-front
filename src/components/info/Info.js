@@ -2,6 +2,7 @@ import apple from "../../assets/apple.png";
 import cheeseburger from "../../assets/cheeseburger.png";
 import chicken from "../../assets/chicken.png";
 import energy from "../../assets/energy.png";
+import PropTypes from "prop-types";
 
 function Info({ cal, prot, glu, lip }) {
   return (
@@ -47,3 +48,10 @@ function Info({ cal, prot, glu, lip }) {
 }
 
 export default Info;
+
+Info.propTypes = {
+  cal: PropTypes.number.isRequired,
+  prot: PropTypes.number.isRequired,
+  glu: PropTypes.number.isRequired,
+  lip: PropTypes.number.isRequired,
+};
