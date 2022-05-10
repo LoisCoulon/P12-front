@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./main.scss";
-import Dashboard from "./pages/dashboard/Dashboard";
-import Home from "./pages/home/Home";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Home from "./pages/Home/Home";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

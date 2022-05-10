@@ -12,16 +12,24 @@ import {
 import { useEffect, useState } from "react";
 import { getActivity } from "../../services/mockServices";
 import { useParams } from "react-router-dom";
+import { getApiActivity } from "../../services/services";
 
 function Activity() {
   const [activityData, setActivityData] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
-    getActivity().then((items) => {
-      let datas = items.find((item) => item.userId === parseFloat(id));
-      if (datas) {
-        const formattedData = datas.sessions.map((activity) => ({
+    //Using Mocked datas
+
+    // getActivity().then((items) => {
+    //   let datas = items.find((item) => item.userId === parseFloat(id));
+    // });
+
+    //Using Api datas
+
+    getApiActivity(id).then((datas) => {
+      if (datas.data) {
+        const formattedData = datas.data.sessions.map((activity) => ({
           date: activity.day,
           kg: activity.kilogram,
           cal: activity.calories,

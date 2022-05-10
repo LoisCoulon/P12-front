@@ -9,17 +9,25 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { getRadar } from "../../services/mockServices";
+import { getApiRadar } from "../../services/services";
 
 function RadarComponent() {
   const [radarData, setRadarData] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
-    getRadar().then((items) => {
-      let datas = items.find((item) => item.userId === parseFloat(id));
-      if (datas) {
-        const formattedData = datas.data.map((rd) => ({
-          subject: datas.kind[rd.kind],
+    //Using Mocked datas
+
+    // getRadar().then((items) => {
+    //   let datas = items.find((item) => item.userId === parseFloat(id));
+
+    // });
+
+    //Using API datas
+    getApiRadar(id).then((items) => {
+      if (items.data) {
+        const formattedData = items.data.data.map((rd) => ({
+          subject: items.data.kind[rd.kind],
           A: rd.value,
         }));
         setRadarData(formattedData);

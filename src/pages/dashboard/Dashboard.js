@@ -1,23 +1,31 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Navbar from "../../components/navbar/Navbar";
-import Sidebar from "../../components/sidebar/Sidebar";
+import Navbar from "../../components/Navbar/Navbar";
+import Sidebar from "../../components/Sidebar/Sidebar";
 import { getList } from "../../services/mockServices";
-import Hello from "../../components/hello/Hello";
-import Info from "../../components/info/Info";
-import Activity from "../../components/activity/Activity";
-import Duration from "../../components/duration/Duration";
-import RadarComponent from "../../components/radar/RadarComponent";
-import Score from "../../components/score/Score";
+import Hello from "../../components/Hello/Hello";
+import Info from "../../components/Info/Info";
+import Activity from "../../components/Activity/Activity";
+import Duration from "../../components/Duration/Duration";
+import RadarComponent from "../../components/Radar/RadarComponent";
+import Score from "../../components/Score/Score";
+import { getApiList } from "../../services/services";
 
 function Dashboard() {
   const { id } = useParams();
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    getList().then((items) => {
-      let datas = items.find((item) => item.id === parseFloat(id));
-      setData(datas);
+    //Using Mocked datas
+
+    // getList().then((items) => {
+    //   let datas = items.find((item) => item.id === parseFloat(id));
+    //   setData(datas);
+    // });
+
+    //Using API datas
+    getApiList(id).then((items) => {
+      setData(items.data);
     });
   }, [id]);
 

@@ -10,16 +10,23 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { useParams } from "react-router-dom";
+import { getApiDuration } from "../../services/services";
 
 function Duration() {
   const [durationData, setDurationData] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
-    getDuration().then((items) => {
-      let datas = items.find((item) => item.userId === parseFloat(id));
-      if (datas) {
-        const formattedData = datas.sessions.map((activity) => ({
+    //Using Mocked datas
+    // getDuration().then((items) => {
+    //   let datas = items.find((item) => item.userId === parseFloat(id));
+
+    // });
+
+    //Using API datas
+    getApiDuration(id).then((datas) => {
+      if (datas.data) {
+        const formattedData = datas.data.sessions.map((activity) => ({
           jour: activity.day,
           durée: activity.sessionLength,
         }));
