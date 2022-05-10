@@ -1,3 +1,7 @@
+[![forthebadge](./src/assets/made-with-create-react-app.svg)](https://create-react-app.dev/)
+[![forthebadge](./src/assets/uses-scss.svg)](https://sass-lang.com/documentation/syntax)
+[![forthebadge](./src/assets/and-recharts.svg)](https://recharts.org/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
