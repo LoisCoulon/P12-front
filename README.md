@@ -3,7 +3,7 @@
 [![forthebadge](./src/assets/and-recharts.svg)](https://recharts.org/)
 
 # SportSee (P12 : Développez un tableau de bord d'analytics avec React)
-(./src/assets/logo.png)
+[![SportSeeLogo](./src/assets/logo.png)
 
 ## Presentation
 SportSee is a startup dedicated to sports coaching. 
