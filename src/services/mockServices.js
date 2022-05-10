@@ -1,3 +1,7 @@
+/**
+ * Those functions allow the connection to the mocked datas
+ * @returns mocked data.json
+ */
 export function getList() {
   const baseUrl = "../mocked/mainData.json";
 

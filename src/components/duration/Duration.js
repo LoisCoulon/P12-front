@@ -20,6 +20,13 @@ function Duration() {
     /** Using Mocked datas*/
     // getDuration().then((items) => {
     //   let datas = items.find((item) => item.userId === parseFloat(id));
+    // if (datas) {
+    //   const formattedData = datas.sessions.map((activity) => ({
+    //     jour: activity.day,
+    //     durée: activity.sessionLength,
+    //   }));
+    //   setDurationData(formattedData);
+    // }
 
     // });
 
@@ -35,11 +42,21 @@ function Duration() {
     });
   }, [id]);
 
+  /**
+   * Gives the first letter of the day of the week using a given number
+   * @param {number} num
+   * @returns The first letter of the day of the week
+   */
   function weekDays(num) {
     const week = ["L", "M", "M", "J", "V", "S", "D"];
     return week[+num - 1];
   }
 
+  /**
+   * A React component that builds a custom Tooltip.
+   * @param {array} payload
+   * @returns a custom html
+   */
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (

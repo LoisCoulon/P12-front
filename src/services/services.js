@@ -1,3 +1,8 @@
+/**
+ * Those functions allow the connection to the different endpoints of the Api
+ * @returns data.json
+ */
+
 export function getApiList(userId) {
   const baseUrl = `http://localhost:3000/user/${userId}`;
 

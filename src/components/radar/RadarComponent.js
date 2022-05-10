@@ -19,6 +19,13 @@ function RadarComponent() {
     /** Using Mocked datas*/
     // getRadar().then((items) => {
     //   let datas = items.find((item) => item.userId === parseFloat(id));
+    // if (datas) {
+    //   const formattedData = datas.data.map((rd) => ({
+    //     subject: datas.kind[rd.kind],
+    //     A: rd.value,
+    //   }));
+    //   setRadarData(formattedData);
+    // }
 
     // });
 

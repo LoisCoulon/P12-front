@@ -23,6 +23,16 @@ function Activity() {
 
     // getActivity().then((items) => {
     //   let datas = items.find((item) => item.userId === parseFloat(id));
+    // if (datas) {
+    //   const formattedData = datas.sessions.map((activity) => ({
+    //     date: activity.day,
+    //     kg: activity.kilogram,
+    //     cal: activity.calories,
+    //   }));
+
+    //   setActivityData(formattedData);
+    // }
+
     // });
 
     /**Using API datas*/
@@ -40,6 +50,11 @@ function Activity() {
     });
   }, [id]);
 
+  /**
+   * Gives the number of the day
+   * @param {number} num
+   * @returns The number of the day
+   */
   function weekDays(num) {
     const week = [1, 2, 3, 4, 5, 6, 7];
     return week[num];
