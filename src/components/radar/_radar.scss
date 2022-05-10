@@ -4,3 +4,9 @@
   min-width: 280px;
   width: 31%;
 }
+@media only screen and (max-width: 1200px) {
+  .radar {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+}
