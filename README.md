@@ -39,7 +39,7 @@ Here is a new version of the dashboard page. This brand new page will allow the 
 
 ## Using the mocked datas
 
-Get to the following files : Dashboard.js, Activity.js, Duration.js, RadarComponent.js
+Get to the following files : Dashboard.js, Activity.js, Duration.js, RadarComponent.js, Score.js
 Uncomment the function under this comment /** Using Mocked datas\*/ and comment the function under /**Using API datas\*/
 
 # Getting Started with Create React App
