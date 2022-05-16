@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import {
   Legend,
   RadialBar,
@@ -5,18 +7,41 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from "recharts";
+import { getApiList } from "../../services/services";
 
 function Score() {
-  const data = [
-    {
-      name: "Score",
-      uv: 38.5,
-      pv: 2400,
-      fill: "#FF0000",
-    },
-  ];
+  const { id } = useParams();
+  const [data, setData] = useState(null);
+  const [score, setScore] = useState(null);
 
-  const score = data.map((d) => d.uv);
+  /**Using mocked datas*/
+  // const datas = [
+  //   {
+  //     name: "Score",
+  //     uv: 38.5,
+  //     pv: 2400,
+  //     fill: "#FF0000",
+  //   },
+  // ];
+
+  // const score = datas.map((d) => d.uv);
+
+  /**Using API datas*/
+  useEffect(() => {
+    getApiList(id).then((items) => {
+      const formatedData = [
+        {
+          name: "Score",
+          uv: items.data.todayScore * 100,
+          pv: 2400,
+          fill: "#FF0000",
+        },
+      ];
+      console.log(formatedData);
+      setData(formatedData);
+      setScore(formatedData.map((fd) => fd.uv));
+    });
+  }, [id]);
 
   /**
    * This function calculates the end angle of the radial bar.
@@ -29,7 +54,7 @@ function Score() {
     return angle;
   }
 
-  return (
+  return data ? (
     <ResponsiveContainer className="score" height={250} width="31%">
       <RadialBarChart
         width={730}
@@ -79,6 +104,6 @@ function Score() {
         <Tooltip />
       </RadialBarChart>
     </ResponsiveContainer>
-  );
+  ) : null;
 }
 export default Score;

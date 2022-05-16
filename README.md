@@ -3,36 +3,44 @@
 [![forthebadge](./src/assets/and-recharts.svg)](https://recharts.org/)
 
 # SportSee (P12 : Développez un tableau de bord d'analytics avec React)
-[![SportSeeLogo](./src/assets/logo.png)
+
+![SportSeeLogo](./src/assets/logo.png)
 
 ## Presentation
-SportSee is a startup dedicated to sports coaching. 
+
+SportSee is a startup dedicated to sports coaching.
 Here is a new version of the dashboard page. This brand new page will allow the user to follow the number of sessions carried out as well as the number of burned calories.
 
 ## Technologies
-- React intalled with create-react-app
-- Javascript
-- SCSS
-- Recharts library
+
+- [React](https://fr.reactjs.org/) intalled with [create-react-app](https://create-react-app.dev/)
+- [Javascript](https://www.javascript.com/)
+- [SASS](https://sass-lang.com/documentation/syntax)
+- [Recharts library](https://recharts.org/)
+- [NodeJS (version 16.14)](https://nodejs.org/en/)
+- [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
+- IDE : [Visual Studio Code](https://code.visualstudio.com/)
 
 ## How to launch the project locally
-- Copy the repository : git clone https://github.com/LoisCoulon/P12-front.git
-- Install the dependencies : yarn install / npm install
-- run the app : yarn start / npm start
+
+- Copy the repository : `git clone https://github.com/LoisCoulon/P12-front.git`
+- Install the dependencies : `yarn install` or `npm install`
+- run the app : `yarn start` or `npm start`
 
 ## Using the Api
-- Prerequisites : 
-NodeJS (version 12.18) /
-Yarn
+
+- Prerequisites :
+  NodeJS (version 12.18) /
+  Yarn
 - Fork this repository : https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard.git
 - Clone it on your computer.
 - The yarn command will allow you to install the dependencies.
 - The yarn dev command will allow you to run the micro API.
 
 ## Using the mocked datas
-Get to the following files : Dashboard.js, Activity.js, Duration.js, RadarComponent.js
-Uncomment the function under this comment /** Using Mocked datas*/ and comment the function under /**Using API datas*/
 
+Get to the following files : Dashboard.js, Activity.js, Duration.js, RadarComponent.js
+Uncomment the function under this comment /** Using Mocked datas\*/ and comment the function under /**Using API datas\*/
 
 # Getting Started with Create React App
 
