@@ -41,7 +41,7 @@ function RadarComponent() {
     });
   }, [id]);
 
-  return (
+  return radarData.length > 0 ? (
     <div className="radar">
       <ResponsiveContainer height="100%" width="100%">
         <RadarChart
@@ -67,7 +67,7 @@ function RadarComponent() {
         </RadarChart>
       </ResponsiveContainer>
     </div>
-  );
+  ) : null;
 }
 
 export default RadarComponent;

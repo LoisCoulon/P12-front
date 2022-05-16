@@ -60,6 +60,38 @@ function Activity() {
     return week[num];
   }
 
+  /**
+   * This function gives a customized style for its content,
+   * which is the values of the data with their units.
+   */
+  function customTooltip({ active, payload }) {
+    if (active && payload && payload.length) {
+      return (
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            background: "#E60000",
+            height: 63,
+            color: "white",
+            fontSize: 10,
+            fontWeight: 500,
+            textAlign: "center",
+            paddingTop: 10,
+            paddingBottom: 10,
+            paddingLeft: 5,
+            paddingRight: 5,
+          }}
+        >
+          <p>{`${payload[0].value} kg`}</p>
+          <p>{`${payload[1].value} kCal`}</p>
+        </div>
+      );
+    }
+    return null;
+  }
+
   return (
     <div className="activity">
       <div className="activity--top">
@@ -87,7 +119,7 @@ function Activity() {
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis tickFormatter={weekDays} />
             <YAxis orientation="right" domain={[0, "dataMax"]} />
-            <Tooltip />
+            <Tooltip content={customTooltip} offset={30} />
             <Bar radius={5} barSize={10} dataKey="kg" fill="#282D30" />
             <Bar radius={5} barSize={10} dataKey="cal" fill="#E60000" />
           </BarChart>
