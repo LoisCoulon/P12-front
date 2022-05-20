@@ -32,8 +32,8 @@ function Duration() {
 
     /**Using API datas*/
     getApiDuration(id).then((datas) => {
-      if (datas.data) {
-        const formattedData = datas.data.sessions.map((activity) => ({
+      if (datas) {
+        const formattedData = datas.sessions.map((activity) => ({
           jour: activity.day,
           durée: activity.sessionLength,
         }));

@@ -32,7 +32,7 @@ function Score() {
       const formatedData = [
         {
           name: "Score",
-          uv: items.data.todayScore * 100,
+          uv: items.score * 100,
           pv: 2400,
           fill: "#FF0000",
         },

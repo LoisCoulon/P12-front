@@ -31,9 +31,10 @@ function RadarComponent() {
 
     /**Using API datas*/
     getApiRadar(id).then((items) => {
+      console.log(items);
       if (items.data) {
-        const formattedData = items.data.data.map((rd) => ({
-          subject: items.data.kind[rd.kind],
+        const formattedData = items.data.map((rd) => ({
+          subject: items.kind[rd.kind],
           A: rd.value,
         }));
         setRadarData(formattedData);

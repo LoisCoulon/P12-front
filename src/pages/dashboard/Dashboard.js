@@ -25,7 +25,7 @@ function Dashboard() {
 
     /**Using API datas*/
     getApiList(id).then((items) => {
-      setData(items.data);
+      setData(items);
     });
   }, [id]);
 
@@ -36,7 +36,7 @@ function Dashboard() {
         <Sidebar />
       </section>
       <section className="main">
-        <Hello username={data.userInfos.firstName} />
+        <Hello username={data.firstName} />
         <div className="content">
           <div className="graphs">
             <Activity />
@@ -47,10 +47,10 @@ function Dashboard() {
             </div>
           </div>
           <Info
-            cal={data.keyData.calorieCount}
-            prot={data.keyData.proteinCount}
-            glu={data.keyData.carbohydrateCount}
-            lip={data.keyData.lipidCount}
+            cal={data.calorieCount}
+            prot={data.proteinCount}
+            glu={data.carbohydrateCount}
+            lip={data.lipidCount}
           />
         </div>
       </section>

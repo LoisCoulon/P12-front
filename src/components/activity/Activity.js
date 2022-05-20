@@ -38,13 +38,12 @@ function Activity() {
     /**Using API datas*/
 
     getApiActivity(id).then((datas) => {
-      if (datas.data) {
-        const formattedData = datas.data.sessions.map((activity) => ({
+      if (datas) {
+        const formattedData = datas.sessions.map((activity) => ({
           date: activity.day,
           kg: activity.kilogram,
           cal: activity.calories,
         }));
-
         setActivityData(formattedData);
       }
     });
