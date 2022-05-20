@@ -1,5 +1,5 @@
 .infos {
-  width: 20%;
+  width: 158px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -7,7 +7,7 @@
     box-shadow: 0px 2px 4px 0px #00000005;
     background-color: $background2;
     width: 100%;
-    height: 124px;
+    height: 105px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -15,11 +15,11 @@
     border-radius: 5px;
 
     .items--img {
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
       position: relative;
-      margin-right: 20px;
-      margin-left: 20%;
+      margin-right: 10px;
+      margin-left: 10px;
       border-radius: 6px;
 
       &.red {
@@ -53,14 +53,14 @@
     }
   }
 }
-@media only screen and (max-width: 1250px) {
-  .infos {
-    &--items {
-      .items--img {
-        width: auto;
-      }
-      .item {
-      }
-    }
-  }
-}
+// @media only screen and (max-width: 1250px) {
+//   .infos {
+//     &--items {
+//       .items--img {
+//         width: auto;
+//       }
+//       .item {
+//       }
+//     }
+//   }
+// }

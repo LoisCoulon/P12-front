@@ -37,7 +37,6 @@ function Score() {
           fill: "#FF0000",
         },
       ];
-      console.log(formatedData);
       setData(formatedData);
       setScore(formatedData.map((fd) => fd.uv));
     });
@@ -70,7 +69,7 @@ function Score() {
           dx="50%"
           textAnchor="middle"
           fill="black"
-          style={{ fontSize: "2.2vw" }}
+          style={{ fontSize: "24px" }}
         >
           {score}%
         </text>
